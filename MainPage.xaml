@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dado.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+
+            <Image
+                x:Name="dadoImagem"
+                Source="dado1.png"
+                HeightRequest="225"
+            />
+
+            <Picker
+                x:Name="SelecaoPicker"
+                Title="Escolha um número (1 a 6)" />
+
+            <Picker
+                x:Name="TipoDadoPicker"
+                Title="Escolha o tipo de dado">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>D6</x:String>
+                        <x:String>D8</x:String>
+                        <x:String>D10</x:String>
+                        <x:String>D12</x:String>
+                        <x:String>D16</x:String>
+                        <x:String>D20</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+                x:Name="RollButton"
+                Text="Jogar dado (Normal)" 
+                Clicked="RollButton_Clicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="RollButtonY"
+                Text="Jogar dado (1 > 3)"
+                Clicked="RollButtonY_Clicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="RollButtonX"
+                Text="Jogar dado (4 > 6)"
+                Clicked="RollButtonX_Clicked"
+                HorizontalOptions="Fill" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
